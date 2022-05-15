@@ -37,9 +37,9 @@ app.use("/images", express.static(__dirname + "/img/images"));
 app.use('/api', usersRouter)
 
 if (process.env.NODE_ENV == "production") {
-    app.use("/", express.static("./servicesats/build"))
+    app.use("/", express.static("./client/build"))
     app.get("*", (req, res) => {
-      res.sendFile(path.resolve(__dirname, './servicesats/build/index.html'))
+      res.sendFile(path.resolve(__dirname, './client/build/index.html'))
     })
   }
 
